@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Madhobi Nag — Graphic Designer Portfolio">
+<title>Madhobi Nag — Graphic Designer</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root{
+  --red:#b5122b;
+  --red-dark:#780b1c;
+  --red-soft:#f9e8eb;
+  --cream:#fffaf8;
+  --ink:#1c1718;
+  --muted:#74686a;
+  --white:#fff;
+  --line:#eadcdf;
+  --shadow:0 20px 60px rgba(105,12,30,.10);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;width:100%;z-index:50;
+  background:rgba(255,250,248,.88);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(234,220,223,.75);
+}
+.nav-inner{
+  height:76px;display:flex;align-items:center;justify-content:space-between;
+}
+.logo{
+  font-family:'Playfair Display',serif;font-size:25px;font-weight:700;
+}
+.logo span{color:var(--red)}
+.nav-links{display:flex;gap:28px;align-items:center;font-size:14px}
+.nav-links a{color:#4f4547;transition:.25s}
+.nav-links a:hover{color:var(--red)}
+.nav-btn{
+  background:var(--red);color:#fff!important;padding:10px 18px;
+  border-radius:30px;font-weight:600;
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;padding:140px 0 80px;
+  display:grid;grid-template-columns:1.05fr .95fr;gap:70px;
+  align-items:center;position:relative;
+}
+.hero:before{
+  content:"";position:absolute;width:520px;height:520px;
+  background:var(--red-soft);border-radius:50%;filter:blur(2px);
+  right:-220px;top:120px;z-index:-1;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  color:var(--red);font-size:13px;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:22px;
+}
+.eyebrow:before{content:"";width:34px;height:2px;background:var(--red)}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(55px,7vw,91px);line-height:.98;
+  letter-spacing:-3px;margin-bottom:24px;
+}
+.hero h1 em{color:var(--red);font-style:normal}
+.hero p{
+  max-width:590px;color:var(--muted);font-size:17px;
+  margin-bottom:32px;
+}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:13px 22px;border-radius:30px;font-weight:700;font-size:14px;
+  transition:.25s;border:1px solid var(--red);
+}
+.btn-primary{background:var(--red);color:white}
+.btn-primary:hover{background:var(--red-dark);transform:translateY(-2px)}
+.btn-outline{color:var(--red)}
+.btn-outline:hover{background:var(--red-soft)}
+
+.hero-art{position:relative;min-height:520px}
+.art-card{
+  position:absolute;inset:25px 25px 25px 25px;
+  background:var(--red);border-radius:45% 45% 12% 12%;
+  transform:rotate(5deg);box-shadow:var(--shadow);
+}
+.art-card:before,.art-card:after{
+  content:"";position:absolute;border:1px solid rgba(255,255,255,.28);
+  border-radius:50%;
+}
+.art-card:before{width:300px;height:300px;right:-80px;top:-60px}
+.art-card:after{width:170px;height:170px;left:-55px;bottom:45px}
+.art-content{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;text-align:center;color:white;
+  transform:rotate(-5deg);padding:45px;
+}
+.art-content .monogram{
+  width:150px;height:150px;border:1px solid rgba(255,255,255,.6);
+  border-radius:50%;display:grid;place-items:center;
+  font-family:'Playfair Display';font-size:72px;
+  margin-bottom:22px;
+}
+.art-content h3{font-family:'Playfair Display';font-size:30px}
+.art-content p{font-size:12px;letter-spacing:3px;opacity:.8}
+
+/* SECTION */
+section{padding:105px 0}
+.section-head{margin-bottom:48px}
+.kicker{
+  color:var(--red);font-size:12px;font-weight:800;letter-spacing:2.5px;
+  text-transform:uppercase;margin-bottom:10px;
+}
+.section-head h2{
+  font-family:'Playfair Display',serif;font-size:clamp(38px,5vw,58px);
+  line-height:1.05;
+}
+.section-head p{color:var(--muted);max-width:650px;margin-top:15px}
+
+/* SERVICES */
+.services{background:#fff}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.service{
+  padding:30px 24px;border:1px solid var(--line);border-radius:22px;
+  background:#fff;transition:.3s;
+}
+.service:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
+.icon{
+  width:48px;height:48px;border-radius:14px;background:var(--red-soft);
+  display:grid;place-items:center;color:var(--red);font-size:21px;margin-bottom:22px;
+}
+.service h3{font-size:17px;margin-bottom:8px}
+.service p{font-size:13px;color:var(--muted)}
+
+/* WORK */
+.work-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.project{
+  min-height:310px;border-radius:25px;overflow:hidden;position:relative;
+  background:linear-gradient(145deg,#8e1026,#d73a51);
+  box-shadow:0 12px 35px rgba(100,10,25,.08);
+}
+.project:nth-child(1){grid-column:span 7}
+.project:nth-child(2){grid-column:span 5}
+.project:nth-child(3){grid-column:span 5}
+.project:nth-child(4){grid-column:span 7}
+.project:nth-child(5){grid-column:span 6}
+.project:nth-child(6){grid-column:span 6}
+.project .visual{
+  position:absolute;inset:0;display:grid;place-items:center;
+  font-family:'Playfair Display';font-size:65px;color:rgba(255,255,255,.9);
+}
+.project:nth-child(2) .visual{font-size:45px;letter-spacing:4px}
+.project:nth-child(3) .visual{font-size:90px}
+.project:nth-child(4) .visual{font-size:38px;letter-spacing:5px}
+.project:nth-child(5) .visual{font-size:55px}
+.project:nth-child(6) .visual{font-size:42px}
+.project-info{
+  position:absolute;left:0;right:0;bottom:0;padding:22px;
+  background:linear-gradient(transparent,rgba(20,0,5,.82));
+  color:white;padding-top:70px;
+}
+.project-info small{opacity:.75;letter-spacing:1px}
+.project-info h3{font-family:'Playfair Display';font-size:24px}
+
+/* ABOUT */
+.about{background:var(--red);color:#fff}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:center}
+.about .kicker{color:#ffd7de}
+.about h2{font-family:'Playfair Display';font-size:55px;line-height:1.05}
+.about p{color:#f8dfe4;margin:18px 0;font-size:16px}
+.about-card{
+  border:1px solid rgba(255,255,255,.2);border-radius:25px;
+  padding:30px;background:rgba(255,255,255,.08);
+}
+.about-card h3{font-family:'Playfair Display';font-size:28px;margin-bottom:18px}
+.about-list{display:grid;gap:14px}
+.about-list div{display:flex;gap:12px;color:#ffecef;font-size:14px}
+.about-list b{color:#fff;min-width:115px}
+
+/* TIMELINE */
+.timeline{display:grid;gap:0}
+.timeline-item{
+  display:grid;grid-template-columns:180px 1fr;gap:30px;
+  padding:25px 0;border-bottom:1px solid var(--line);
+}
+.timeline-item .year{color:var(--red);font-weight:700;font-size:13px}
+.timeline-item h3{font-size:19px;margin-bottom:4px}
+.timeline-item p{color:var(--muted);font-size:14px}
+
+/* ART */
+.art-section{background:#fff}
+.art-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.art-box{
+  min-height:240px;border-radius:24px;position:relative;overflow:hidden;
+  display:flex;align-items:flex-end;padding:25px;color:#fff;
+}
+.art-box:first-child{background:linear-gradient(135deg,#35151c,#b5122b)}
+.art-box:last-child{background:linear-gradient(135deg,#b5122b,#e95a70)}
+.art-box:before{
+  content:"";position:absolute;width:260px;height:260px;border:1px solid rgba(255,255,255,.3);
+  border-radius:50%;top:-80px;right:-30px;
+}
+.art-box h3{font-family:'Playfair Display';font-size:30px;z-index:1}
+.art-box p{position:absolute;right:24px;top:24px;font-size:11px;letter-spacing:2px;opacity:.75}
+
+/* CONTACT */
+.contact{padding-bottom:80px}
+.contact-box{
+  background:#fff;border:1px solid var(--line);border-radius:30px;
+  padding:55px;display:grid;grid-template-columns:1fr 1fr;gap:50px;
+  box-shadow:var(--shadow);
+}
+.contact h2{font-family:'Playfair Display';font-size:50px;line-height:1.05}
+.contact p{color:var(--muted);margin-top:15px}
+.contact-details{display:grid;gap:17px;align-content:center}
+.contact-details a,.contact-details div{padding:15px 18px;border-radius:14px;background:var(--cream);font-size:14px}
+.contact-details span{display:block;color:var(--red);font-size:11px;text-transform:uppercase;letter-spacing:1.5px;font-weight:800}
+
+/* FOOTER */
+footer{padding:25px 0;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+.footer-inner{display:flex;justify-content:space-between;gap:20px}
+
+/* MOBILE */
+@media(max-width:850px){
+  .nav-links a:not(.nav-btn){display:none}
+  .hero{grid-template-columns:1fr;gap:30px;padding-top:125px}
+  .hero-art{min-height:400px}
+  .service-grid{grid-template-columns:1fr 1fr}
+  .project:nth-child(n){grid-column:span 12}
+  .about-grid,.contact-box{grid-template-columns:1fr;gap:35px}
+  .art-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  section{padding:75px 0}
+  .hero h1{font-size:54px;letter-spacing:-2px}
+  .hero-art{min-height:350px}
+  .art-card{inset:20px 10px}
+  .service-grid{grid-template-columns:1fr}
+  .timeline-item{grid-template-columns:1fr;gap:7px}
+  .contact-box{padding:30px 22px}
+  .contact h2{font-size:40px}
+  .footer-inner{flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#home">Madhobi<span>.</span></a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact" class="nav-btn">Let's Talk</a>
+    </div>
+  </div>
+</nav>
+
+<main id="home">
+
+<section class="hero container">
+  <div>
+    <div class="eyebrow">Graphic Designer · Creative Artist</div>
+    <h1>Designing ideas with <em>feeling.</em></h1>
+    <p>
+      Hi, I'm <strong>Madhobi Nag</strong> — a graphic designer who loves turning
+      simple ideas into thoughtful, elegant and effective visual experiences.
+      From brand identity and logos to banners, posters and social media designs,
+      I create with a soft, detail-focused approach.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#work">Explore My Work ↗</a>
+      <a class="btn btn-outline" href="https://www.behance.net/madhobinag1" target="_blank">Behance Portfolio</a>
+    </div>
+  </div>
+
+  <div class="hero-art">
+    <div class="art-card">
+      <div class="art-content">
+        <div class="monogram">MN</div>
+        <h3>Madhobi Nag</h3>
+        <p>GRAPHIC DESIGN · ART · VISUALS</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">What I Do</div>
+      <h2>Visuals that feel<br>simple & intentional.</h2>
+      <p>I work across digital and print design, combining creativity, clarity and attention to detail.</p>
+    </div>
+
+    <div class="service-grid">
+      <div class="service">
+        <div class="icon">✦</div>
+        <h3>Brand Identity</h3>
+        <p>Logo, business card, letterhead and cohesive visual identity systems.</p>
+      </div>
+      <div class="service">
+        <div class="icon">◫</div>
+        <h3>Poster & Banner</h3>
+        <p>Eye-catching promotional visuals for campaigns, events and businesses.</p>
+      </div>
+      <div class="service">
+        <div class="icon">◎</div>
+        <h3>Social Media</h3>
+        <p>Clean, engaging social designs made for modern digital communication.</p>
+      </div>
+      <div class="service">
+        <div class="icon">⌁</div>
+        <h3>Print Design</h3>
+        <p>Simple and effective print-ready designs with careful visual balance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Selected Work</div>
+      <h2>A glimpse of my<br>creative direction.</h2>
+      <p>Replace these showcase cards with her real client projects, Behance work or portfolio images.</p>
+    </div>
+
+    <div class="work-grid">
+      <a class="project" href="https://www.behance.net/madhobinag1" target="_blank">
+        <div class="visual">MN</div>
+        <div class="project-info"><small>BRAND IDENTITY</small><h3>Identity & Logo Design</h3></div>
+      </a>
+      <a class="project" href="https://www.behance.net/madhobinag1" target="_blank">
+        <div class="visual">POSTER</div>
+        <div class="project-info"><small>CAMPAIGN DESIGN</small><h3>Poster & Promotional Visuals</h3></div>
+      </a>
+      <a class="project" href="https://www.behance.net/madhobinag1" target="_blank">
+        <div class="visual">✦</div>
+        <div class="project-info"><small>SOCIAL MEDIA</small><h3>Social Media Creative</h3></div>
+      </a>
+      <a class="project" href="https://www.behance.net/madhobinag1" target="_blank">
+        <div class="visual">SIGNATURE</div>
+        <div class="project-info"><small>CLIENT WORK</small><h3>Business & Brand Graphics</h3></div>
+      </a>
+      <a class="project" href="https://www.behance.net/madhobinag1" target="_blank">
+        <div class="visual">LOGO</div>
+        <div class="project-info"><small>VISUAL IDENTITY</small><h3>Logo Exploration</h3></div>
+      </a>
+      <a class="project" href="https://www.behance.net/madhobinag1" target="_blank">
+        <div class="visual">ART + DESIGN</div>
+        <div class="project-info"><small>CREATIVE ART</small><h3>Artistic Visual Direction</h3></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div>
+      <div class="kicker">About Me</div>
+      <h2>Creative by nature, thoughtful by process.</h2>
+    </div>
+    <div>
+      <p>
+        I enjoy exploring fresh ideas, adapting to challenges, and turning problems
+        into effective solutions. My approach combines creative thinking with logical
+        analysis to deliver original work that adds real value.
+      </p>
+      <p>
+        Alongside graphic design, I have a strong interest in painting, drawing and
+        classical dance — experiences that continue to influence my visual sense,
+        composition and creativity.
+      </p>
+      <div class="about-card">
+        <h3>My Toolkit</h3>
+        <div class="about-list">
+          <div><b>Design</b><span>Adobe Photoshop · Adobe Illustrator · Canva</span></div>
+          <div><b>Creative</b><span>Adobe Lightroom · Camera Raw · Painting & Drawing</span></div>
+          <div><b>Work Style</b><span>Attention to detail · Teamwork · Leadership</span></div>
+          <div><b>Languages</b><span>Bangla — Native · English — Intermediate</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Experience & Education</div>
+      <h2>The journey<br>behind the work.</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="year">2025 — PRESENT</div>
+        <div><h3>Graphic Designer · Signature Group</h3><p>Remote · Current professional role</p></div>
+      </div>
+      <div class="timeline-item">
+        <div class="year">SEP — DEC 2025</div>
+        <div><h3>Junior Graphic Designer & Team Leader · Aimer Merchants Limited</h3><p>Internship experience</p></div>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2025</div>
+        <div><h3>Graphic Designing — Level 3</h3><p>Infosystem Technology Limited · NSDA</p></div>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2025</div>
+        <div><h3>Graphic Design Training</h3><p>Infosystem Technology Limited · ASSET BWCCI Project</p></div>
+      </div>
+      <div class="timeline-item">
+        <div class="year">RUNNING</div>
+        <div><h3>BSc in Computer Science & Engineering</h3><p>Tejgaon College</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="art-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Beyond Design</div>
+      <h2>Art is part of<br>my visual language.</h2>
+      <p>Creative practice outside graphic design helps me bring emotion, rhythm and originality into my work.</p>
+    </div>
+    <div class="art-grid">
+      <div class="art-box">
+        <p>CREATIVE ART</p>
+        <h3>Painting & Drawing</h3>
+      </div>
+      <div class="art-box">
+        <p>CLASSICAL DANCE</p>
+        <h3>Manipuri · Chhayanaut</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <div>
+        <div class="kicker">Let's Create</div>
+        <h2>Have an idea?<br>Let's make it visual.</h2>
+        <p>Available for graphic design projects, branding, social media creatives, posters and visual communication.</p>
+      </div>
+      <div class="contact-details">
+        <a href="mailto:madhobinag123@gmail.com"><span>Email</span>madhobinag123@gmail.com</a>
+        
+        <a href="https://www.behance.net/madhobinag1" target="_blank"><span>Portfolio</span>Behance / madhobinag ↗</a>
+        <div><span>Location</span>Dhaka, Bangladesh</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>© Madhobi Nag. All rights reserved.</div>
+    <div>Designed with creativity & care.</div>
+  </div>
+</footer>
+
+</body>
+</html>
